@@ -401,13 +401,14 @@ header {
 
 .navbar__cart-num {
   background-color: pink;
-  padding: 0px 4px;
+  padding: 1px 4px;
   border-radius: 50%;
   font-size: 1rem;
   position: absolute;
   right: 5px;
   top: 11px;
   cursor: pointer;
+  text-align: center;
 }
 
 
@@ -541,6 +542,7 @@ header {
 */
 .hero__carousel-slide {
 	position: relative;
+  display: none;
 }
 
 .hero__carousel-img {
@@ -1616,3 +1618,20 @@ header {
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 */
+
+.navbar__toggle,
+.navbar__search-link {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar__logo-link {
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* global classes */
+.is--active {
+  display: block;
+}

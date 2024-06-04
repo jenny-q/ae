@@ -4,7 +4,7 @@
 		<meta name="robots" content="noindex, nofollow">
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
 	
-		<link rel="stylesheet" href="assets/css/normalize..css" />
+		<link rel="stylesheet" href="assets/css/normalize.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
 
         <title>Beautiful Beginnings</title>
@@ -16,7 +16,13 @@
 					<nav class="navbar__main">
 						<div class="navbar__main-container">
 							<div class="navbar__logo-container">
-								<img src="./assets/images/BB-logo-1.png" alt="BB logo" />
+								<a href="/" class="navbar__logo-link">
+									<img 
+									srcset="./assets/images/bb-logo-mobile.svg 480w, ./assets/images/bb-logo-desktop.svg 800w" 
+									sizes="(max-width: 767px) 480px, 800px"
+									src="./assets/images/bb-logo-mobile.svg"
+									alt="Beautiful beginnings">
+								</a>
 							</div>
 							<div class="navbar__chat-container">
 								<div class="navbar__inner-chat-container">
@@ -42,12 +48,19 @@
 									<div class="navbar__cart-link-container">
 										<div class="navbar__cart-num">5</div>
 										<a href="#" class="navbar__cart-link navbar__link">
-											
+											<img src="assets/images/shoppingbag.svg" />
 										</a>
 									</div>
 									<div class="navbar__search-link-container">
-										<a href="#" class="navbar__search-link navbar__link navbar__mobile-search-link navbar__search-svg">
-											
+										<button type="button" class="navbar__search-link navbar__link navbar__mobile-search-link navbar__search-svg" aria-expanded="false" data-toggle-search>
+											<img src="assets/images/search.svg" alt="" />
+										</button>
+									</div>
+
+									<!-- nav toggle -->
+									<div class="navbar__toggle-container">
+										<button type="button" aria-label="toggle menu" class="navbar__toggle" data-toggle-menu aria-expanded="false">
+											<img src="assets/images/menu-hamburger.svg" />
 										</a>
 									</div>
 									
@@ -55,14 +68,14 @@
 							</div>
 						</div>
 
-						<div class="navbar__search">
+						<div class="navbar__search" data-search-bar>
 							<label class="navbar__search-label" for="navbar__input">Search Bar</label>
 							<input class="navbar__input" type="text" name="navbar__input" id="navbar__input" placeholder="Search..." />
 						</div>
-						<div class="navbar__menu">
+						<div class="navbar__menu" data-mobile-menu>
 							<ul class="navbar__menu-list">
 								<li class="navbar__menu-list-item navbar__mobile-close-item">
-									<button class="navbar__mobile-close-btn">
+									<button class="navbar__mobile-close-btn" type="button" data-close-menu>
 										<img src="assets/images/close.svg" />
 									</button>
 								</li>
@@ -127,8 +140,8 @@
             </header>
             <main>
                 <section class="hero">
-                    <div class="hero__carousel" id="hero__carousel">
-                        <div class="hero__carousel-slide">
+                    <div class="hero__carousel" id="hero__carousel" data-carousel>
+                        <div class="hero__carousel-slide is--active" data-carousel-slide>
                             <div class="hero__carousel-img"><img src="assets/images/slide1.png" alt="" /></div>
                             <div class="hero__outter-text-container">
                                 <div class="hero__inner-text-container">
@@ -145,16 +158,59 @@
                                     </div>
                                 </div>
                             </div>
-
-                            
                         </div>
+
+						<div class="hero__carousel-slide" data-carousel-slide>
+                            <div class="hero__carousel-img"><img src="assets/images/slide2.png" alt="" /></div>
+                            <div class="hero__outter-text-container">
+                                <div class="hero__inner-text-container">
+                                    <p class="hero__inner-product-mini-title">On Sale</p>
+                                    <h2 class="hero__inner-product-title">Infant Fall Outfits</h2>
+                                    <div class="hero__inner-slide-graphic">
+                                        <img src="assets/images/stardiv.svg" />
+                                    </div>
+                                    <h3 class="hero__inner-product-description">
+                                        Save up to 50%
+                                    </h3>
+                                    <div class="hero__inner-button-container">
+                                        <button class="hero__inner-slide-button">Shop Sale</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+						<div class="hero__carousel-slide" data-carousel-slide>
+                            <div class="hero__carousel-img"><img src="assets/images/slide3.png" alt="" /></div>
+                            <div class="hero__outter-text-container">
+                                <div class="hero__inner-text-container">
+                                    <p class="hero__inner-product-mini-title">On Sale</p>
+                                    <h2 class="hero__inner-product-title">Infant Fall Outfits</h2>
+                                    <div class="hero__inner-slide-graphic">
+                                        <img src="assets/images/stardiv.svg" />
+                                    </div>
+                                    <h3 class="hero__inner-product-description">
+                                        Save up to 50%
+                                    </h3>
+                                    <div class="hero__inner-button-container">
+                                        <button class="hero__inner-slide-button">Shop Sale</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+						<button type="button" class="carousel__prev" aria-label="prev slide" data-prev-slide>
+							<img src="assets/images/carousel-prev.svg" />
+						</button>
+						<button type="button" class="carousel__next" aria-label="next slide" data-next-slide>
+							<img src="assets/images/carousel-next.svg" />
+						</button>
 
                 </section>
                 <section class="products">
 					<div class="container">
 						<ul class="products__list">
 							<li class="products__list-item products__text-container">
-								<p class="products__mini-title">this month's</p>
+								<p class="products__mini-title">this month"s</p>
 								<h2 class="products__title">Featured Products</h2>
 								<div class="products__graphic">
 									<img src="assets/images/stardiv.svg" />
@@ -207,7 +263,7 @@
 									<img src="assets/images/stardiv.svg" />
 								</div>
 								<p class="shopping__category-description">
-									Make sure you little one catches all the Z's
+									Make sure you little one catches all the Z"s
 								</p>
 								<div class="shopping__button-container">
 									<button class="shopping__category-button">shop bedding</button>
@@ -220,7 +276,7 @@
 							</div>
 							<div class="shopping__category-text-container">
 								<p class="shopping__category-mini-title">cozy comfortable</p>
-								<h2 class="shopping__category-title">Children's Furniture</h2>
+								<h2 class="shopping__category-title">Children"s Furniture</h2>
 								<div class="shopping__category-graphic">
 									<img src="assets/images/stardiv.svg" />
 								</div>
@@ -301,8 +357,8 @@
 							</p>
 							<br />
 							<p>
-								To receive a gift from Beautiful Beginnings is a new mom's biggest wish. There are so many unique and beautiful baby gifts to select from including baby burp cloths, designer diaper bags, baby clothes and many
-								baby toys. Whether you are looking for Christening gifts, a baby shower gift, a newborn gift or even a gift for a child's birthday, we have many baby gifts to choose from. Beautiful Beginnings is your one stop
+								To receive a gift from Beautiful Beginnings is a new mom"s biggest wish. There are so many unique and beautiful baby gifts to select from including baby burp cloths, designer diaper bags, baby clothes and many
+								baby toys. Whether you are looking for Christening gifts, a baby shower gift, a newborn gift or even a gift for a child"s birthday, we have many baby gifts to choose from. Beautiful Beginnings is your one stop
 								shop for all family and friends.
 							</p>
 						</div>
@@ -437,6 +493,7 @@
 					</div>
                 </section>
             </footer>
-        </div>
+        </div>		
     </body>
+	<script src="assets/js/main.js" async defer></script>
 </html>
