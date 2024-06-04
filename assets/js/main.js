@@ -4,11 +4,8 @@ const IS_ACTIVE = "is--active";
 let sliderIndex = 0;
 let paginationIndex = 0;
 
-let menuToggle = document.querySelector("[data-toggle-menu]");
-let closeMenu = document.querySelector("[data-close-menu]");
+let menuToggle = document.querySelectorAll("[data-toggle-menu]");
 let searchToggle = document.querySelector("[data-toggle-search]")
-
-let carousel = document.querySelector("[data-carousel]")
 let carouselSlide = document.querySelectorAll("[data-carousel-slide]")
 let nextSlide =  document.querySelector("[data-next-slide]")
 let prevSlide =  document.querySelector("[data-prev-slide]")
@@ -18,24 +15,18 @@ let footerToggle = document.querySelectorAll("[data-toggle-footer]")
 let carouselArr = Array.from(carouselSlide);
 let paginationArr = Array.from(paginationItem);
 
-function initSlide(slide, index) {
-    if(slide.classList.contains(IS_ACTIVE)) {
-        sliderIndex = index;
-    }
-}
-carouselArr.forEach(initSlide)
-paginationArr.forEach(initSlide)
-
 function toggleNav() {
     let menu = document.querySelector("[data-mobile-menu]");
-    menu.classList.add(IS_ACTIVE)
-    menu.ariaExpanded = "true"
-}
-
-function closeNav() {
-    let menu = document.querySelector("[data-mobile-menu]");
-    menu.classList.remove(IS_ACTIVE)
-    menu.ariaExpanded = "false"
+    menu.classList.toggle(IS_ACTIVE)
+    if(menu.classList.contains(IS_ACTIVE)) {
+        menuToggle.forEach(item => {
+            item.ariaExpanded= "true"
+        })
+    } else {
+        menuToggle.forEach(item => {
+            item.ariaExpanded= "false"
+        })
+    }
 }
 
 function toggleSearch() {
@@ -85,10 +76,7 @@ footerToggle.forEach(item => {
     })
 })
 
-menuToggle.addEventListener("click", toggleNav)
-closeMenu.addEventListener("click", closeNav)
 searchToggle.addEventListener("click", toggleSearch)
-
 nextSlide.addEventListener("click", showNextSlide)
 prevSlide.addEventListener("click", showPrevSlide)
 
