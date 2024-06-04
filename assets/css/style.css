@@ -1788,4 +1788,33 @@ header {
   .footer__nav-list-link-container {
     display: block;
   }
+  .footer__nav-list-item-title-container,
+  .footer__nav-list-item-contact-container {
+    padding: 0;
+  }
+  .footer__btn {
+    display: none;
+  }
+  .carousel__btn {
+    width: 50px;
+    height: 75px;
+  }
+  .carousel__btn img {
+    width: 33px;
+  }
+  .carousel__btn-next {
+    right: 50px;
+  }
+  .carousel__btn-prev {
+    left: 50px;
+  }
+  .navbar__toggle-container {
+    display: none;
+  }
+  .carousel__pagination {
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+  }
 }
