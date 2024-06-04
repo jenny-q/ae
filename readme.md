@@ -9,7 +9,7 @@ For all js functions, I went ahead and used a data attribute to target elements 
 The hamburger icon and the close icon both have the same data attribute:
 `let menuToggle = document.querySelectorAll("[data-toggle-menu]");`
 
-At first I had two separate functions, one for close and one for open (see commit - link here), but I cleaned it up a bit so that I have one toggle fuction:
+At first I had two separate functions, one for close and one for open (see [commit](https://github.com/jenny-q/ae/commit/fd988f565a6acdb285a1db6776ca46fde0f41da7#r142735819)), but I cleaned it up a bit so that I have one toggle fuction:
 `menuToggle.forEach(item => {
     item.addEventListener("click", toggleNav)
 })`
