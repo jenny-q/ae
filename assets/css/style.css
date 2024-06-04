@@ -66,6 +66,7 @@ header {
 
 .navbar__logo-container {
   width: 100%;
+  padding: 0 20px;
 }
 
 .navbar__menu {
@@ -1732,6 +1733,9 @@ header {
   height: 30px;
   width: 30px;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer__icon-close,
