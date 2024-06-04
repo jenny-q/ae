@@ -13,6 +13,7 @@ let carouselSlide = document.querySelectorAll("[data-carousel-slide]")
 let nextSlide =  document.querySelector("[data-next-slide]")
 let prevSlide =  document.querySelector("[data-prev-slide]")
 let paginationItem = document.querySelectorAll("[data-pagination-item]")
+let footerToggle = document.querySelectorAll("[data-toggle-footer]")
 
 let carouselArr = Array.from(carouselSlide);
 let paginationArr = Array.from(paginationItem);
@@ -77,9 +78,17 @@ function showPrevSlide() {
     paginationItem[paginationIndex].classList.add(IS_ACTIVE);
 }
 
+footerToggle.forEach(item => {
+    item.addEventListener("click", function(){
+        this.parentElement.classList.toggle(IS_ACTIVE);
+        this.ariaExpanded = "true"
+    })
+})
+
 menuToggle.addEventListener("click", toggleNav)
 closeMenu.addEventListener("click", closeNav)
 searchToggle.addEventListener("click", toggleSearch)
 
 nextSlide.addEventListener("click", showNextSlide)
 prevSlide.addEventListener("click", showPrevSlide)
+

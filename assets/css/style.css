@@ -1190,12 +1190,20 @@ header {
 
 .newsletter__background {
   background-image: url("../images/leafpatterntall.jpg");
-  width: 120%;
+  width: 100%;
   min-height: 610px;
   position: absolute;
-  top: 120px;
-  left: -20px;
-  right: -20px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .newsletter__background {
+    width: 120%;
+    top: 120px;
+    left: -20px;
+    right: -20px;
+  }
 }
 
 .newsletter__container {
@@ -1420,7 +1428,7 @@ header {
   list-style-type: none;
 }
 
-.footer__nav-list a {
+.footer__nav-list-link-container a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: black;
@@ -1428,6 +1436,8 @@ header {
 	font-weight: 600;
 	border: 1px solid transparent;
 	border-radius: 5px;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 .footer__nav-list a:hover,
@@ -1619,6 +1629,21 @@ header {
 ////////////////////////////////////////////////////////////////
 */
 
+
+/* global classes */
+.is--active {
+  display: flex;
+}
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
 .navbar__toggle,
 .navbar__search-link {
   background-color: transparent;
@@ -1694,16 +1719,69 @@ header {
     border-bottom: 1px solid black;
     padding: 15px 10px;
 }
-/* global classes */
-.is--active {
+
+.footer__nav-list-link-container {
+  display: none;
+}
+.is--active ~ .footer__nav-list-link-container {
+  display: block;
+  padding: 15px 20px 15px 30px;
+}
+.footer__btn {
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  border: none;
+}
+
+.footer__icon-close,
+.is--active .footer__icon {
+  display: none;
+}
+.is--active .footer__icon-close {
   display: block;
 }
-.sr-only {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
+.footer__nav-list-item-title-container,
+.footer__nav-list-item-contact-container {
+  padding: 15px 20px 15px 30px;
+}
+
+.footer__nav-list-item-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social-list {
+  display: flex;
+  list-style: none;
+  margin: 20px 0 0 0;
+}
+
+.footer__social {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  margin-right: 20px;
+  padding: 5px;
+}
+.bg-color-blue {
+  background: #B8D1ED;
+}
+.bg-color-green {
+  background: #D5DC91;
+}
+.bg-color-pink {
+  background: #FFCCCC;
+}
+.bg-color-yellow {
+  background: #FFEFBC;
+}
+
+@media (min-width: 1024px)  {
+  .footer__icon {
+    display: none;
+  }
+  .footer__nav-list-link-container {
+    display: block;
+  }
 }
